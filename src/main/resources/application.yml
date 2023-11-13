@@ -1,0 +1,35 @@
+---
+
+spring:
+  main:
+    banner-mode: off
+
+  cloud:
+    aws:
+      region:
+        auto: false
+        static: eu-central-1
+      stack:
+        auto: false
+
+management:
+  info:
+    env:
+      enabled: true
+    git:
+      mode: full
+  cloudwatch:
+    metrics:
+      export:
+        enabled: true
+        batchSize: 20
+        namespace: demo_metrics
+
+logging:
+  charset: 'utf-8'
+  level:
+    root: INFO
+    org.springframework: ERROR
+    com.amazonaws.util.EC2MetadataUtils: ERROR
+    com.amazonaws.util.EC2ResourceFetcher: ERROR
+    com.amazonaws.internal.InstanceMetadataServiceResourceFetcher: ERROR
